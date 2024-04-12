@@ -1,0 +1,61 @@
+{
+  "title": "Данные профиля",
+  "categories": [
+    {
+      "name": "workspace",
+      "placeholder": "Рабочее пространство"
+    },
+    {
+      "name": "privacy",
+      "placeholder": "Приватность"
+    },
+    {
+      "name": "security",
+      "placeholder": "Безопасность"
+    }
+  ],
+  "inputs": [
+    {
+      "label": "Имя",
+      "id": "name",
+      "name": "name",
+      "required": true
+    },
+    {
+      "label": "Никнейм",
+      "id": "username",
+      "name": "username",
+      "required": true
+    },
+    {
+      "label": "Почта",
+      "id": "email",
+      "name": "email",
+      "required": true
+    },
+    {
+      "label": "Город",
+      "id": "city",
+      "name": "city",
+      "required": true
+    },
+    {
+      "label": "Телефон",
+      "id": "phone",
+      "name": "phone",
+      "required": true
+    },
+    {
+      "label": "Название компании",
+      "id": "company",
+      "name": "company",
+      "required": true
+    }
+  ],
+  "buttonText": "Сохранить",
+  "modal": {
+    "id": "modal-status",
+    "successMsg": "Изменения сохранены!",
+    "errorMsg": "Произошла ошибка!"
+  }
+}
