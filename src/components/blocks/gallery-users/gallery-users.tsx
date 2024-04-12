@@ -12,7 +12,7 @@ export const GalleryUsers = ({ data }: IGalleryUsersProps) => {
     Boolean(data.length) && (
       <ul className={styles.gallery}>
         {data.map((item) => (
-          <li key={item.id}>
+          <li className={styles.galleryItem} key={item.id}>
             <UserCard {...item} />
           </li>
         ))}

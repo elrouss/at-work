@@ -16,3 +16,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.galleryItem {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    // for safari iphone, if mixin single-line won't work
+    flex-grow: 1;
+  }
+}
