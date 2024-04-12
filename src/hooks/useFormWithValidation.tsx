@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 export interface IFormValues {
   [key: string]: string;
@@ -19,7 +19,6 @@ export default function useFormWithValidation() {
 
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage.slice(0, -1) });
-    setIsValid(target.closest('form')!.checkValidity());
   };
 
   const resetInput = (
@@ -30,8 +29,11 @@ export default function useFormWithValidation() {
 
     setValues({ ...values, [input.name]: '' });
     setErrors({ ...errors, [input.name]: 'Заполните это поле' });
-    setIsValid(Object.values(errors).some((error) => Boolean(error.length)));
   };
+
+  useEffect(() => {
+    setIsValid(!Object.values(errors).some((error) => Boolean(error.length)));
+  }, [errors]);
 
   const resetForm = useCallback(
     (
