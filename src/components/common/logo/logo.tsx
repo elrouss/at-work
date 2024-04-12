@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <Link
       className={styles.logo}
-      to="/"
+      to="/at-work"
       aria-label="Перейти на главную страницу"
     >
       <Svg name="logo" />

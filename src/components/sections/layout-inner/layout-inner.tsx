@@ -34,7 +34,7 @@ export const LayoutInner = ({
           extraClass={styles.backBtn}
           iconName="arrow-left"
           label="Назад"
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/at-work')}
         />
       )}
       {title && <TitleWithBorder title={title} tag="h2" />}
