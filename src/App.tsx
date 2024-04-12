@@ -9,8 +9,8 @@ export const App = () => {
   return (
     <AnimatePresence mode="wait" initial>
       <Routes key={location.pathname} location={location}>
-        <Route path="/at-work" element={<Root />} />
-        <Route path="/at-work/:id" element={<UserProfile />} />
+        <Route path="/" element={<Root />} />
+        <Route path="/:id" element={<UserProfile />} />
       </Routes>
     </AnimatePresence>
   );

@@ -68,7 +68,7 @@ export const UserCard = (data: IUserCardProps) => {
                         label: 'Редактировать',
                         onClick: () => {
                           dispatch(setInitialUserData(data));
-                          navigate(`/at-work/${id}`);
+                          navigate(`/${id}`);
                         },
                       },
                       {
