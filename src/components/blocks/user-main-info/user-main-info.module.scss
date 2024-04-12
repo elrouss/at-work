@@ -1,0 +1,46 @@
+@use '../../../styles/index.scss';
+
+.wrapper {
+  border-radius: 16px;
+  padding: 40px;
+  padding-top: 45px;
+  background-color: color('primary-600');
+
+  @include media-breakpoint-down(xxl) {
+    padding: fluid-element(28, 40, $xs, $xxl);
+  }
+
+  h2 {
+    @include media-breakpoint-down(xl) {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+.inputs {
+  width: 61.8%;
+
+  & > *:not(:first-child) {
+    margin-top: 1px;
+
+    @include media-breakpoint-down(xxl) {
+      margin-top: fluid-element(4, 1, $xs, $xxl);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+}
+
+.button {
+  margin-top: 8px;
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+}
+
+.title {
+  @include h1-sb;
+}

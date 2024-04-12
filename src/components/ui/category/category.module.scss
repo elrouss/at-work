@@ -1,0 +1,29 @@
+@use '../../../styles/index.scss';
+
+.label {
+  display: block;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid color('primary-400');
+  padding-bottom: 11px;
+  @include t2-m;
+
+  &::placeholder {
+    font-family: inherit;
+    color: color('primary-300');
+    transition: color $transition-duration-basic $transition-behavior-basic;
+  }
+
+  @include hover {
+    &::placeholder {
+      color: color('accent-100');
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    padding-bottom: fluid-element(7, 11, $xs, $xxl);
+  }
+}

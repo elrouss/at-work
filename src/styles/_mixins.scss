@@ -1,0 +1,58 @@
+@use 'sass:math';
+@use './variables';
+@use './functions';
+
+@mixin media($property, $device-size) {
+  @media screen and (#{$property}: #{$device-size}px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  @media (max-width: #{map-get(variables.$breakpoints, $name) - 1}px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin rem($property, $size, $rootFontSize: 16px) {
+  #{$property}: math.div($size, $rootFontSize) * 1rem;
+}
+
+@mixin rem-adaptive($property, $desktop-1440, $mobile-375) {
+  $mobile-375-rem: functions.rem($mobile-375);
+  $desktop-1440-rem: functions.rem($desktop-1440);
+
+  #{$property}: $mobile-375-rem;
+
+  @include media(min-width, 375) {
+    #{$property}: calc(
+      #{$mobile-375-rem} + (
+          #{functions.strip-unit($desktop-1440-rem)} - #{functions.strip-unit(
+              $mobile-375-rem
+            )}
+        ) * ((100vw - #{functions.rem(375px)}) / (1440 - 375))
+    );
+  }
+
+  @include media(min-width, 1440) {
+    #{$property}: $desktop-1440-rem;
+  }
+}
+
+@mixin lh($lh, $fz) {
+  line-height: math.div($lh, $fz) * 100%;
+}
+
+@mixin single-line() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}

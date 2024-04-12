@@ -1,0 +1,49 @@
+@use './functions';
+
+:root {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+
+  color: functions.color('primary-100');
+  background-color: functions.color('primary-500');
+
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+a,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}

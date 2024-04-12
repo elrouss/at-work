@@ -1,0 +1,15 @@
+@use '../../../styles/index.scss';
+
+.modalWrapper {
+  position: relative;
+  border-radius: 16px;
+  background-color: color('primary-600');
+}
+
+.button {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 12px;
+  height: 12px;
+}

@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  column-gap: 40px;
+
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+
+    & > *:not(:first-child) {
+      margin-top: 32px;
+    }
+  }
+}

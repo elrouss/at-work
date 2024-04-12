@@ -1,0 +1,35 @@
+@use '../../../styles/index.scss';
+
+.username {
+  @include t2-m;
+  color: color('primary-200');
+  transition: color $transition-duration-basic $transition-behavior-basic;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  column-gap: 9px;
+  cursor: pointer;
+
+  @include hover {
+    .username {
+      color: color('accent-100');
+    }
+  }
+}
+
+.img {
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include media-breakpoint-down(xxl) {
+    width: fluid-element(28, 20, $xs, $xxl);
+  }
+}

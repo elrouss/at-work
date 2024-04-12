@@ -1,0 +1,21 @@
+@use '../../../styles/index.scss';
+
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, color('brand-200'));
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 16px), #000 0);
+  animation: s3 1s infinite linear;
+}

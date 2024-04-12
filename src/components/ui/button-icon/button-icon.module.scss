@@ -1,0 +1,23 @@
+@use '../../../styles/index.scss';
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: inherit;
+    height: inherit;
+    fill: currentcolor;
+
+    * {
+      transition: all $transition-duration-basic $transition-behavior-basic;
+    }
+  }
+
+  @include hover {
+    svg {
+      fill: color('accent-100');
+    }
+  }
+}

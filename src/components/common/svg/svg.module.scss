@@ -1,0 +1,9 @@
+@use '../../../styles/index.scss';
+
+.svg {
+  &:hover {
+    * {
+      fill: color('accent-100');
+    }
+  }
+}

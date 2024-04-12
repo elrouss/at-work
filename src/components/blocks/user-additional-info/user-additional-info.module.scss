@@ -1,0 +1,45 @@
+@use '../../../styles/index.scss';
+
+.wrapper {
+  border-radius: 16px;
+  padding: 40px;
+  padding-top: 45px;
+  background-color: color('primary-600');
+
+  @include media-breakpoint-down(xxl) {
+    padding: fluid-element(28, 40, $xs, $xxl);
+  }
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 8px;
+
+  @include media-breakpoint-down(xxl) {
+    height: fluid-element(187, 485, $xs, $xxl);
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+}
+
+.categories {
+  margin-top: 35px;
+
+  @include media-breakpoint-down(xxl) {
+    margin-top: fluid-element(24, 35, $xs, $xxl);
+  }
+
+  & > * {
+    margin-top: 23px;
+
+    @include media-breakpoint-down(xxl) {
+      margin-top: fluid-element(18, 23, $xs, $xxl);
+    }
+  }
+}
+
+.title {
+  @include h1-sb;
+}

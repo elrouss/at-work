@@ -1,0 +1,19 @@
+@mixin font($name, $weight, $fileName, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src:
+      local($name),
+      url('../../../assets/fonts/#{$fileName}.woff2') format('woff2'),
+      url('../../../assets/fonts/#{$fileName}.woff') format('woff'),
+      url('../../../assets/fonts/#{$fileName}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@include font('Manrope', 600, 'Manrope-Semibold');
+@include font('Manrope', 500, 'Manrope-Medium');
+
+@include font('Inter', 700, 'Inter-Bold');
+@include font('Inter', 400, 'Inter-Regular');

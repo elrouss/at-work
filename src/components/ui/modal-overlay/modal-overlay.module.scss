@@ -1,0 +1,25 @@
+@use '../../../styles/index.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $modal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(color('primary-100'), 0.24);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity $transition-duration-basic $transition-behavior-basic,
+    visibility $transition-duration-basic $transition-behavior-basic;
+}
+
+.isShown {
+  opacity: 1;
+  visibility: visible;
+}

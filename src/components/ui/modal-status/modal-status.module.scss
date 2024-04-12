@@ -1,0 +1,20 @@
+@use '../../../styles/index.scss';
+
+.modalStatus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 53px 35px 40px;
+
+  @include media-breakpoint-down(xxl) {
+    padding: fluid-element(45, 53, $xs, $xxl) fluid-element(27, 35, $xs, $xxl)
+      fluid-element(30, 40, $xs, $xxl);
+  }
+}
+
+.title {
+  margin-top: 30px;
+  @include h2-sb;
+  color: color('primary-200');
+}

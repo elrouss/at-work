@@ -1,0 +1,57 @@
+@use './mixins';
+
+@mixin h1-sb {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  @include mixins.rem(font-size, 24px);
+  @include mixins.lh(33px, 24px);
+}
+
+@mixin h2-sb {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  @include mixins.rem-adaptive(font-size, 20px, 18px);
+  @include mixins.rem-adaptive(line-height, 27px, 25px);
+}
+
+@mixin t1-sb {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  @include mixins.rem-adaptive(font-size, 18px, 16px);
+  @include mixins.rem-adaptive(line-height, 25px, 22px);
+}
+
+@mixin t2-sb {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  @include mixins.rem-adaptive(font-size, 16px, 14px);
+  @include mixins.rem-adaptive(line-height, 22px, 19px);
+}
+
+@mixin t2-m {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  @include mixins.rem-adaptive(font-size, 16px, 14px);
+  @include mixins.rem-adaptive(line-height, 22px, 19px);
+}
+
+@mixin caption {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  @include mixins.rem-adaptive(font-size, 14px, 10px);
+  @include mixins.rem-adaptive(line-height, 19px, 14px);
+}
+
+@mixin logo-sb {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  @include mixins.rem(font-size, 24px);
+  @include mixins.lh(20, 24);
+}
+
+@mixin logo-r {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  @include mixins.rem(font-size, 24px);
+  @include mixins.lh(20, 24);
+}

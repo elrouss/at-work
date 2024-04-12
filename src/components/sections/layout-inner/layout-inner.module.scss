@@ -1,0 +1,63 @@
+@use '../../../styles/index.scss';
+
+.section {
+  max-width: 1160px;
+  padding-top: 40px;
+  margin: 0 auto;
+
+  &:last-child {
+    padding-bottom: 265px;
+
+    @include media-breakpoint-down(xxl) {
+      padding-bottom: fluid-element(32, 265, $xs, $xxl);
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    padding-top: fluid-element(32, 40, $xs, $xxl);
+    margin-right: fluid-element(16, 140, $xs, $xxl);
+    margin-left: fluid-element(16, 140, $xs, $xxl);
+  }
+}
+
+.backBtn {
+  column-gap: 16px;
+  margin-bottom: 45px;
+  @include t2-sb;
+  color: color('primary-200');
+  transition: color $transition-duration-basic $transition-behavior-basic;
+
+  @include hover {
+    color: color('accent-100');
+  }
+
+  @include media-breakpoint-down(xl) {
+    column-gap: 10px;
+    margin-bottom: 34px;
+    margin-left: 16px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentcolor;
+  }
+}
+
+.topSmallIndent {
+  padding-top: 20px;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 12px;
+  }
+}
+
+.bottomSmallIndent {
+  &:last-child {
+    padding-bottom: 198px;
+
+    @include media-breakpoint-down(xxl) {
+      padding-bottom: fluid-element(40, 198, $xs, $xxl);
+    }
+  }
+}

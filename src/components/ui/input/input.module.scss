@@ -1,0 +1,72 @@
+@use '../../../styles/index.scss';
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  margin-bottom: 7px;
+  @include t1-sb;
+  color: color('primary-100');
+
+  @include media-breakpoint-down(xxl) {
+    margin-bottom: fluid-element(10, 15, $xs, $xxl);
+  }
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+  width: 9px;
+  height: 9px;
+  opacity: 0;
+  cursor: text;
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  border: 2px solid color('primary-400');
+  padding: 8px 30px 8px 14px;
+  border-radius: 50px;
+  @include t1-sb;
+  color: color('primary-100');
+  caret-color: color('primary-100');
+
+  &::placeholder {
+    font-family: inherit;
+    color: color('primary-200');
+  }
+
+  &:focus-visible {
+    + .button {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.error {
+  min-height: 19px;
+  padding-left: 16px;
+  margin-top: 4px;
+  @include caption;
+  color: color('error');
+
+  @include media-breakpoint-down(xxl) {
+    min-height: fluid-element(12, 19, $xs, $xxl);
+  }
+}

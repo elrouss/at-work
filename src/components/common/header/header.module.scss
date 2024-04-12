@@ -1,0 +1,51 @@
+@use '../../../styles/index.scss';
+
+.header {
+  background-color: color('primary-600');
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  padding: 16px 0;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(xxl) {
+    padding-top: fluid-element(12, 16, $xs, $xxl);
+    padding-bottom: fluid-element(12, 16, $xs, $xxl);
+    margin-right: fluid-element(16, 150, $xs, $xxl);
+    margin-left: fluid-element(16, 150, $xs, $xxl);
+  }
+}
+
+.userInfo {
+  display: flex;
+  column-gap: 25px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.iconFavorite {
+  width: 15px;
+  height: 12px;
+  stroke: currentcolor;
+
+  @include hover {
+    stroke: color('accent-100');
+  }
+}
+
+.iconAnnounce {
+  width: 15px;
+  height: 14px;
+}

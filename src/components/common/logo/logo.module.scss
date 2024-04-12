@@ -1,0 +1,22 @@
+@use '../../../styles/index.scss';
+
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.title {
+  @include logo-r;
+  color: color('brand-100');
+}
+
+.strong {
+  @include logo-sb;
+}

@@ -1,0 +1,18 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 40px;
+  max-width: 1160px;
+
+  @include media-breakpoint-down(xxl) {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(fluid-element(140, 360, $xs, $xxl), auto)
+    );
+    gap: fluid-element(20, 40, $xs, $xxl) fluid-element(18, 32, $xs, $xxl);
+  }
+
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
