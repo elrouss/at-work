@@ -23,7 +23,7 @@ export const UserProfile = () => {
   const selectedUser = useAppSelector(getUserProfileData) as IUserProfile;
 
   useEffect(() => {
-    if (selectedUser) return;
+    if (selectedUser || !users?.length) return;
 
     dispatch(
       setInitialUserData(
