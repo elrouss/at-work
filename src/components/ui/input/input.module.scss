@@ -67,6 +67,10 @@
   color: color('error');
 
   @include media-breakpoint-down(xxl) {
-    min-height: fluid-element(12, 19, $xs, $xxl);
+    min-height: fluid-element(14, 19, $xs, $xxl);
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-top: 2px;
   }
 }
