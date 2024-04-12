@@ -25,7 +25,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_API_URL_OPENAPI_1: ${{ secrets.VITE_API_URL_OPENAPI }}
+          VITE_API_URL_OPENAPI: ${{ secrets.VITE_API_URL_OPENAPI }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
