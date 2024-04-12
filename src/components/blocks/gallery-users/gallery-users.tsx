@@ -1,8 +1,9 @@
 import styles from './gallery-users.module.scss';
-import { UserCard, IUserCardProps } from '../user-card/user-card';
+import { UserCard } from '../user-card/user-card';
+import { IUsersDataExtended } from '@/services/features/users/types';
 
 interface IGalleryUsersProps {
-  data: IUserCardProps[] | null;
+  data: IUsersDataExtended[] | null;
 }
 
 export const GalleryUsers = ({ data }: IGalleryUsersProps) => {

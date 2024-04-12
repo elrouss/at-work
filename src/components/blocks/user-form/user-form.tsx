@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './user-form.module.scss';
 import { UserAdditionalInfo } from '../user-additional-info/user-additional-info';
-import { IUserCardProps } from '../user-card/user-card';
 import { UserMainInfo } from '../user-main-info/user-main-info';
 import { ICategoryProps } from '@/components/ui/category/category';
 import { IInputProps } from '@/components/ui/input/input';
@@ -10,12 +9,13 @@ import { ModalWrapper } from '@/components/ui/modal-wrapper/modal-wrapper';
 import { handleFormInitialState } from '@/helpers/handleFormInitialState';
 import useFormWithValidation from '@/hooks/useFormWithValidation';
 import { useAppDispatch } from '@/services/app/hooks';
+import { IUserProfile } from '@/services/features/user-profile/types';
 import { updateUserData } from '@/services/features/users/slice';
 import { IModalStatus } from '@/types';
 
 interface IUserFormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   title?: string;
-  selectedUser: IUserCardProps;
+  selectedUser: IUserProfile;
   categories: ICategoryProps[];
   inputs: Omit<IInputProps, 'onButtonClick'>[];
   buttonText: string;

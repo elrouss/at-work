@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './user-additional-info.module.scss';
 import { TitleWithBorder } from '../title-with-border/title-with-border';
-import { IUserCardProps } from '../user-card/user-card';
 import { Category, ICategoryProps } from '@/components/ui/category/category';
 import { IFormValues } from '@/hooks/useFormWithValidation';
+import { IUserProfile } from '@/services/features/user-profile/types';
 
 interface IUserAdditionalInfo {
   title?: string;
-  selectedUser: IUserCardProps;
+  selectedUser: IUserProfile;
   categories: ICategoryProps[];
   values: IFormValues;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;

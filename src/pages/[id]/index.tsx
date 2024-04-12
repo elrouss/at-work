@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { IUserCardProps } from '@/components/blocks/user-card/user-card';
 import { UserForm } from '@/components/blocks/user-form/user-form';
 import { Header } from '@/components/common/header/header';
 import { LayoutAnimation } from '@/components/sections/layout-animation/layout-animation';
@@ -10,7 +9,9 @@ import { getJsonData } from '@/helpers/data/getJsonData';
 import { useAppSelector, useAppDispatch } from '@/services/app/hooks';
 import { getUserProfileData } from '@/services/features/user-profile/selectors';
 import { setInitialUserData } from '@/services/features/user-profile/slice';
+import { IUserProfile } from '@/services/features/user-profile/types';
 import { getActiveUsers } from '@/services/features/users/selectors';
+import { IUsersDataExtended } from '@/services/features/users/types';
 
 let json = null as any;
 getJsonData('user-profile').then((data) => (json = data));
@@ -19,7 +20,7 @@ export const UserProfile = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const users = useAppSelector(getActiveUsers);
-  const selectedUser = useAppSelector(getUserProfileData) as IUserCardProps;
+  const selectedUser = useAppSelector(getUserProfileData) as IUserProfile;
 
   useEffect(() => {
     if (selectedUser) return;
@@ -28,7 +29,7 @@ export const UserProfile = () => {
       setInitialUserData(
         users.find(
           (user) => user.id === Number(location.pathname.slice(1))
-        ) as IUserCardProps
+        ) as IUsersDataExtended
       )
     );
   }, [users]);

@@ -1,8 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IUserCardProps } from '@/components/blocks/user-card/user-card';
+import { IUserProfile } from './types';
+import { IUsersDataExtended } from '../users/types';
 
 type TSliceState = {
-  user: IUserCardProps | null;
+  user: IUserProfile | null;
 };
 
 const initialState: TSliceState = { user: null };
@@ -11,8 +12,12 @@ const userProfileSlice = createSlice({
   name: 'userProfile',
   initialState,
   reducers: {
-    setInitialUserData: (state, action: PayloadAction<IUserCardProps>) => {
-      state.user = action.payload;
+    setInitialUserData: (state, action: PayloadAction<IUsersDataExtended>) => {
+      state.user = {
+        ...action.payload,
+        city: action.payload.address.city,
+        company: action.payload.company.name,
+      };
     },
 
     reset: () => initialState,

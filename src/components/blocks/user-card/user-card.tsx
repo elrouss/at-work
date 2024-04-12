@@ -11,28 +11,21 @@ import {
   unarchiveUser,
   hideUser,
 } from '@/services/features/users/slice';
+import { IUsersDataExtended } from '@/services/features/users/types';
 
-export interface IUserCardProps {
-  id: number;
-  img: string;
-  name: string;
-  username: string;
-  company: string;
-  city: string;
-  email: string;
-  phone: string;
-  isArchived?: boolean;
-  workspace?: string;
-  privacy?: string;
-  security?: string;
-}
-
-export const UserCard = (data: IUserCardProps) => {
+export const UserCard = (data: IUsersDataExtended) => {
   const [isDropdownShown, setIsDropdownShown] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const { id, img, username, company, city, isArchived = false } = data;
+  const {
+    id,
+    img,
+    username,
+    company: { name },
+    address: { city },
+    isArchived = false,
+  } = data;
 
   const onBtnMoreClick = () => {
     setIsDropdownShown((prevState) => !prevState);
@@ -45,7 +38,7 @@ export const UserCard = (data: IUserCardProps) => {
         <header className={styles.header}>
           <div className={styles.info}>
             <h3 className={styles.title}>{username}</h3>
-            <p className={styles.company}>{company}</p>
+            <p className={styles.company}>{name}</p>
           </div>
           <div className={styles.dropdownWrapper}>
             <ButtonIcon

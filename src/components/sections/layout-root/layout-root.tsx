@@ -1,10 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { fetchUsersData } from '@/api/fetchUsersData';
 import { Preloader } from '@/components/common/preloader/preloader';
-import { getUsersData } from '@/helpers/data/getUsersData';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
-import { useAppDispatch } from '@/services/app/hooks';
-import { setInitialUsers } from '@/services/features/users/slice';
+import { useAppDispatch, useAppSelector } from '@/services/app/hooks';
+import { error } from '@/services/features/users/selectors';
+import { fetchUsersData } from '@/services/features/users/slice';
 
 interface ILayoutProps {
   children?: ReactNode;
@@ -19,16 +18,16 @@ export const LayoutRoot = ({ children }: ILayoutProps) => {
   const [isAppLoaded, setIsAppLoaded] = useState(hasInitiallyLoaded);
   const dispatch = useAppDispatch();
 
+  const statusError = useAppSelector(error);
+
   useEffect(() => {
     if (hadInitialDataRequest) return;
 
     const fetchData = async () => {
       try {
-        const data = await fetchUsersData(6);
-
-        dispatch(setInitialUsers(getUsersData(data)));
-      } catch (e) {
-        console.error(e);
+        dispatch(fetchUsersData());
+      } catch (_) {
+        console.error(statusError);
       } finally {
         hadInitialDataRequest = true;
         hasInitiallyLoaded = true;
